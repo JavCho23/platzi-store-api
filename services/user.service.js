@@ -1,5 +1,5 @@
 const boom = require('@hapi/boom');
-
+const { models:{ User } } = require('../libs/sequelize');
 class UserService {
   constructor() {}
 
@@ -8,7 +8,7 @@ class UserService {
   }
 
   async find() {
-    return [];
+    return User.findAll()
   }
 
   async findOne(id) {
